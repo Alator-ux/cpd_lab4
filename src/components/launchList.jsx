@@ -1,5 +1,4 @@
 function LaunchList(props) {
-
     return (
         <aside className="aside" id="launchesContainer">
             <h3>Launches</h3>
