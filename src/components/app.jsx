@@ -12,27 +12,16 @@ function App(){
         spacex.launches().then(data =>{
             setLaunches(data)
         })
+    },[])
+    useEffect(()=>{
         spacex.launchpads().then(data => {
             setLaunchpads(data)
         })
-        console.log('Haha')
     },[])
-    let map = new Map({
-        width: 1000,
-        height: 600,
-        margin: {
-        top: 20,
-        right: 20,
-        bottom: 20,
-        left: 100
-        },
-    });
-
-    console.log('Hihi')
     return(
         <main className='main'>
             <LaunchList launches={launches} />
-            <map.Map launchpads={launchpads} highlightLaunchpadId={undefined} />
+            <Map launchpads={launchpads} />
         </main>
     )
 }
